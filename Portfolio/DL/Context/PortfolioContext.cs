@@ -5,12 +5,12 @@ namespace Portfolio.DL.Context
 {
 	public class PortfolioContext:DbContext
 	{
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseSqlServer("Server=LAPTOP-U443062K\\SQLEXPRESS;initial Catalog=PortfolioDb;integrated Security=true;");
-		}
+        public PortfolioContext(DbContextOptions<PortfolioContext> options) : base(options)
+        {
 
-		public DbSet<About> Abouts { get; set; }
+        }
+
+        public DbSet<About> Abouts { get; set; }
 		public DbSet<Contact> Contacts { get; set; }
 		public DbSet<Experience> Experiences { get; set; }
 		public DbSet<Feature> Features { get; set; }
