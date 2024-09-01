@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Portfolio.DL.Context;
+
 namespace Portfolio
 {
 	public class Program
@@ -8,6 +11,7 @@ namespace Portfolio
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
+
 
 			var app = builder.Build();
 
