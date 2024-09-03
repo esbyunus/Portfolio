@@ -37,27 +37,12 @@
  <!-- end home-content -->
 
     <ul class="home-social">
-        <li>
-            <a href="https://github.com/esbyunus"><i class="im im-github" aria-hidden="false"></i><span>Github</span></a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/yunus.yslcmn/"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/esbyunus/"><i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
-        </li>
-        <li>
-            <a href="#", style="display: none;"><i class="im im-facebook" aria-hidden="false"></i><span>Facebook</span></a>
-        </li>
-        <li>
-            <a href="#", style="display: none;"><i class="im im-twitter" aria-hidden="false"></i><span>Twitter</span></a>
-        </li>
-        <li>
-            <a href="#" , style="display: none;"><i class="im im-behance" aria-hidden="true"></i><span>Behance</span></a>
-        </li>
-        <li>
-            <a href="#" , style="display: none;"><i class="im im-pinterest" aria-hidden="true"></i><span>Pinterest</span></a>
-        </li>
+        @foreach (var item in ViewBag.socialMedia)
+        {
+            <li>
+                <a href="@item.Url"><i class="@item.Icon" aria-hidden="true"></i><span>@item.Title</span></a>
+            </li>
+        }
     </ul>
     <!-- end home-social -->
 

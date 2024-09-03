@@ -3,19 +3,18 @@ using Portfolio.DL.Context;
 
 namespace Portfolio.ViewComponents
 {
-    public class _FeatureComponentPartial:ViewComponent
+    public class _TestimonialComponentPartial:ViewComponent
     {
         private readonly PortfolioContext _context;
 
-        public _FeatureComponentPartial(PortfolioContext context)
+        public _TestimonialComponentPartial(PortfolioContext context)
         {
             _context = context;
         }
 
         public IViewComponentResult Invoke()
         {
-            ViewBag.socialMedia = _context.SocialMedias.ToList();
-            var values = _context.Features.ToList();
+            var values = _context.Testimonials.ToList();
             return View(values);
         }
     }

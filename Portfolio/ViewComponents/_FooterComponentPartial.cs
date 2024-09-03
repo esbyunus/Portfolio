@@ -1,21 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Portfolio.DL.Context;
 
 namespace Portfolio.ViewComponents
 {
-    public class _FeatureComponentPartial:ViewComponent
+    public class _FooterComponentPartial:ViewComponent
     {
         private readonly PortfolioContext _context;
 
-        public _FeatureComponentPartial(PortfolioContext context)
+        public _FooterComponentPartial(PortfolioContext context)
         {
             _context = context;
         }
 
         public IViewComponentResult Invoke()
         {
-            ViewBag.socialMedia = _context.SocialMedias.ToList();
-            var values = _context.Features.ToList();
+            var values = _context.SocialMedias.ToList();
             return View(values);
         }
     }
