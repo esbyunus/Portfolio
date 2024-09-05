@@ -37,7 +37,7 @@ namespace Portfolio.Controllers
 			var value = _context.Abouts.Find(id);
 			_context.Abouts.Remove(value);
 			_context.SaveChanges();
-			return RedirectToAction("ExperienceList");
+			return RedirectToAction("AboutList");
 		}
 
 		[HttpGet]
