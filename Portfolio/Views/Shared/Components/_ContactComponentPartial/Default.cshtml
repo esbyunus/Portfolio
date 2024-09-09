@@ -1,4 +1,6 @@
-﻿<section id="contact" class="s-contact target-section" >
+﻿@model Message
+
+<section id="contact" class="s-contact target-section" >
 
     <div class="overlay"></div>
 
@@ -17,16 +19,16 @@
                 <fieldset>
 
                     <div class="form-field">
-                        <input name="contactName" type="text" id="contactName" placeholder="İsminiz" value="" minlength="2" required="" aria-required="true" class="full-width">
+                        <input name="contactName"  type="text" id="contactName" placeholder="İsminiz" value="" minlength="2" required="" aria-required="true" class="full-width">
                     </div>
                     <div class="form-field">
-                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
+                        <input name="contactEmail"  type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
                     </div>
                     <div class="form-field">
-                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Konu" value="" class="full-width">
+                        <input name="contactSubject"  type="text" id="contactSubject" placeholder="Konu" value="" class="full-width">
                     </div>
                     <div class="form-field">
-                        <textarea name="contactMessage" id="contactMessage" placeholder="Mesajinizi yaziniz" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                        <textarea name="contactMessage"  id="contactMessage" placeholder="Mesajinizi yaziniz" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
                     </div>
                     <div class="form-field">
                         <button class="full-width btn--primary">Gonder</button>
