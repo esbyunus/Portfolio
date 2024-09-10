@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.DL.Context;
 using Portfolio.Controllers;
+using Portfolio.DL.Entities;
 
 namespace Portfolio.ViewComponents
 {
@@ -23,7 +24,6 @@ namespace Portfolio.ViewComponents
             ViewBag.contactEmail2=_context.Contacts.Select(x=> x.Email2).FirstOrDefault();
             ViewBag.contactAddress=_context.Contacts.Select(x=> x.Address).FirstOrDefault();
 
-            
             return View(); 
         }
     }

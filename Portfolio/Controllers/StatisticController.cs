@@ -18,7 +18,10 @@ namespace Portfolio.Controllers
 			ViewBag.v2 = _context.Messages.Count();
 			ViewBag.v3 = _context.Messages.Where(x => x.IsRead == false).Count();
 			ViewBag.v4 = _context.Messages.Where(x => x.IsRead == true).Count();
-			return View();
+            ViewBag.v5 = _context.MyPortfolios.Count();
+            ViewBag.v6 = _context.Testimonials.Count();
+            ViewBag.v7 = _context.Experiences.Count();
+            return View();
 		}
 	}
 }

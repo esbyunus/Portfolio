@@ -19,15 +19,15 @@ namespace Portfolio.Controllers
 			return View(values);
 		}
 
-		public IActionResult ChangeIsReadToTrue(int id) 
+		public IActionResult ChangeIsReadToTrue(int id)
 		{
 			var value = _context.Messages.Find(id);
 			value.IsRead = true;
 			_context.SaveChanges();
 			return RedirectToAction("Inbox");
-		}		
+		}
 
-		public IActionResult ChangeIsReadToFalse(int id) 
+		public IActionResult ChangeIsReadToFalse(int id)
 		{
 			var value = _context.Messages.Find(id);
 			value.IsRead = false;
@@ -49,14 +49,5 @@ namespace Portfolio.Controllers
 			var value = _context.Messages.Find(id);
 			return View(value);
 		}
-
-		[HttpPost]
-		public IActionResult SendMessage(Message message)
-		{
-			_context.Messages.Add(message);
-			_context.SaveChanges();
-			return View();
-		}
-		
 	}
 }
