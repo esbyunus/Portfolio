@@ -1,13 +1,45 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
 <!DOCTYPE html>
 
-<html class="no-js" lang="en">
+<html class="no-js" lang="tr">
 
 @await Component.InvokeAsync("_HeadComponentPartial")
+
+<head>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Portfolio</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/Template/css/base.css">
+    <link rel="stylesheet" href="~/Template/css/main.css">
+    <link rel="stylesheet" href="~/Template/css/vendor.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6, p, a, span {
+            font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif !important;
+        }
+        
+        .s-about__content {
+            font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif !important;
+        }
+        
+        .s-services {
+            font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif !important;
+        }
+        
+        .s-contact {
+            font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif !important;
+        }
+    </style>
+</head>
 
 <body id="top">
 

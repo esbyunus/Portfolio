@@ -1,0 +1,63 @@
+@model SearchViewModel
+@{
+    ViewData["Title"] = "Arama Sonuçları";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Arama Sonuçları</h4>
+        @if (!string.IsNullOrEmpty(Model.SearchTerm))
+        {
+            <p>"@Model.SearchTerm" için arama sonuçları:</p>
+
+            @if (Model.Abouts.Any())
+            {
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h5>Hakkımda</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            @foreach (var item in Model.Abouts)
+                            {
+                                <li class="list-group-item">
+                                    <h6>@item.Title</h6>
+                                    <p>@item.SubDescription</p>
+                                    <a href="/About/UpdateAbout/@item.AboutId" class="btn btn-sm btn-primary">Düzenle</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            }
+
+            @if (Model.Experiences.Any())
+            {
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h5>Deneyimler</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            @foreach (var item in Model.Experiences)
+                            {
+                                <li class="list-group-item">
+                                    <h6>@item.Title</h6>
+                                    <p>@item.Description</p>
+                                    <a href="/Experience/UpdateExperience/@item.ExperienceId" class="btn btn-sm btn-primary">Düzenle</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            }
+
+            // Diğer bölümler için benzer kartlar...
+        }
+        else
+        {
+            <p>Arama yapmak için bir terim girin.</p>
+        }
+    </div>
+</div> 

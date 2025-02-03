@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Portfolio.DL.Context;
+using Portfolio.Services;
 
 namespace Portfolio
 {
@@ -17,6 +18,12 @@ namespace Portfolio
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            builder.Services.AddScoped<EmailService>();
+
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
 
             var app = builder.Build();
 
@@ -33,11 +40,13 @@ namespace Portfolio
 
 			app.UseRouting();
 
+			app.UseSession();
+
 			app.UseAuthorization();
 
 			app.MapControllerRoute(
 				name: "default",
-				pattern: "{controller=Home}/{action=Index}/{id?}");
+				pattern: "{controller=Default}/{action=Index}/{id?}");
 
 			app.Run();
 		}

@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.DL.Context;
 using Portfolio.DL.Entities;
+using Portfolio.Filters;
 
 namespace Portfolio.Controllers
 {
+	[AdminAuthFilter]
 	public class AboutController : Controller
 	{
 		private readonly PortfolioContext _context;

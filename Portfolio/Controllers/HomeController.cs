@@ -15,8 +15,8 @@ namespace Portfolio.Controllers
 
 		public IActionResult Index()
 		{
-			return View();
-		}
+            return RedirectToAction("AboutList", "About");
+        }
 
 		public IActionResult Privacy()
 		{
